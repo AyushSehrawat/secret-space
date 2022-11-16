@@ -1,0 +1,25 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Color Palette */
+/*
+#61892F - Into dark green
+#86C232 - Probs for text
+#222629 - Background
+#474BF4 - Dark Greyish probs for some small text
+#6B6E70 - Light Greyish probs for some small text
+*/
+
+* {
+    margin: 0;
+    padding: 0;
+    display: border-box;
+}
+
+body {
+    background-color: #222629;
+    background-image: radial-gradient(circle, #ffffff20 1%, transparent 10%), radial-gradient(circle, #ffffff20 1%, transparent 10%);
+    background-size: 30px 30px;
+    background-position: 0 0, 80px 80px;
+}

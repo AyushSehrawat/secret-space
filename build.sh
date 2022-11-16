@@ -1,0 +1,1 @@
+npx tailwindcss -i ./templates/static/tailwind.css -o ./templates/static/style.css --watch
