@@ -1,34 +1,13 @@
-<!DOCTYPE html>
-<html lang="en">
+{% extends "base.html" %}
 
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/static/style.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Cedarville+Cursive&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Rubik&display=swap" rel="stylesheet">
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" rel="stylesheet">
-    <title>Home | Secret Space</title>
-</head>
+<!--Page Title-->
+{% block title %}Dashboard{% endblock title %}
 
-<body>
-    <header>
-        <nav class="flex p-4 justify-center">
-            <div class="flex justify-center gap-2">
-                <p class="font-primary font-bold text-white text-4xl p-2">Secrets</p>
-            </div>
-            <div class="flex items-center ml-20 lg:ml-96 gap-2">
-                <p class="font-primary font-semibold text-white text-lg p-2 px-4 bg-green-light rounded-lg cursor-pointer">Home</p>
-                <p class="font-primary font-semibold text-white text-lg p-2 px-4 bg-green-light rounded-lg cursor-pointer">Logout</p>
-            </div>
-        </nav>
-    </header>
+<!--Navbar-->
+{% block nav_1_id %}homeButton{% endblock nav_1_id %}
+{% block nav_2_id %}logoutButton{% endblock nav_2_id %}
 
-    <script src="/static/script.js"></script>
+{% block nav_1_text %}Home{% endblock nav_1_text %}
+{% block nav_2_text %}Logout{% endblock nav_2_text %}
 
-</body>
-
-</html>
+{% block content %}{% endblock content %}

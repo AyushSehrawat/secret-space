@@ -1,120 +1,95 @@
-<!DOCTYPE html>
-<html lang="en">
+{% extends "base.html" %}
 
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/static/style.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Cedarville+Cursive&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Rubik&display=swap" rel="stylesheet">
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" rel="stylesheet">
-    <title>Home | Secret Space</title>
-</head>
+<!--Page Title-->
+{% block title %}Home{% endblock title %}
 
-<body>
-    <header>
-        <nav class="flex p-4 justify-center">
-            <div class="flex justify-center gap-2">
-                <p class="font-primary font-bold text-white text-4xl p-2">Secrets</p>
-            </div>
-            <div class="flex items-center ml-20 lg:ml-96 gap-2">
-                <p id="loginButton" class="font-primary font-semibold text-white text-lg p-2 px-4 bg-green-light rounded-full cursor-pointer">Login</p>
-                <p id="registerButton" class="font-primary font-semibold text-white text-lg p-2 px-4 bg-green-light rounded-full cursor-pointer">Register
-                </p>
-            </div>
-        </nav>
-    </header>
-    <div class="mt-20 lg:mt-2 flex flex-col lg:flex-row items-center justify-center h-screen lg:ml-10">
-        <div class="grid place-content-center">
-            <p class="font-primary mx-auto text-green-dark text-xl font-semibold">Store your secrets in the cloud</p>
-            <p class="font-primary mx-auto text-7xl lg:text-9xl font-bold text-white">Secrets</p>
-            <p class="font-primary max-w-sm text-center mx-auto text-gray-light font-semibold text-xl">A place where you
-                can safely keep your passwords and other important stuff safely</p>
-        </div>
-        <img src="https://i.ibb.co/MnQ00hx/clip-cyber-protection.png" width="500" height="500" />
+<!--Navbar-->
+{% block nav_1_id %}loginButton{% endblock nav_1_id %}
+{% block nav_2_id %}registerButton{% endblock nav_2_id %}
+
+{% block nav_1_text %}Login{% endblock nav_1_text %}
+{% block nav_2_text %}Register{% endblock nav_2_text %}
+
+
+{% block content %}
+<div class="mt-20 lg:mt-2 flex flex-col lg:flex-row items-center justify-center h-screen lg:ml-10">
+    <div class="grid place-content-center">
+        <p class="font-primary mx-auto text-green-dark text-xl font-semibold">Store your secrets in the cloud</p>
+        <p class="font-primary mx-auto text-7xl lg:text-9xl font-bold text-white">Secrets</p>
+        <p class="font-primary max-w-sm text-center mx-auto text-gray-light font-semibold text-xl">A place where you
+            can safely keep your passwords and other important stuff safely</p>
     </div>
-    <p class="text-center text-white font-primary font-bold text-4xl lg:text-6xl">Why use &quot;Secrets&quot; ?</p>
-    <div class="grid grid-flow-row lg:grid-flow-col my-4 text-white gap-4 place-content-center">
-        <div class="overflow-hidden text-cent bg-green-light rounded-lg max-w-sm">
-            <div class="p-4 flex flex-col items-center gap-2">
-                <i class="fa-solid fa-bolt-lightning text-white text-4xl"></i>
-                <p class="font-primary font-semibold text-2xl">Accessibility & Reliability</p>
-            </div>
-            <p class="font-primary font-semibold text-white text-xl mx-4 text-center mb-4">Access your secrets from
-                anywhere and anytime securely. We provide the users a hassle free environment to manage their secrets.
-            </p>
+    <img src="static/images/lock.png" width="500" height="500" />
+</div>
+<p class="text-center text-white font-primary font-bold text-4xl lg:text-6xl">Why use &quot;Secrets&quot; ?</p>
+<div class="grid grid-flow-row lg:grid-flow-col my-4 text-white gap-4 place-content-center">
+    <div class="overflow-hidden text-cent bg-green-light rounded-lg max-w-sm">
+        <div class="p-4 flex flex-col items-center gap-2">
+            <i class="fa-solid fa-bolt-lightning text-white text-4xl"></i>
+            <p class="font-primary font-semibold text-2xl">Accessibility & Reliability</p>
         </div>
-        <div class="overflow-hidden text-cent bg-green-light rounded-lg max-w-sm">
-            <div class="p-4 flex flex-col items-center gap-2">
-                <i class="fa-solid fa-lock text-white text-4xl"></i>
-                <p class="font-primary font-semibold text-white text-2xl">Security</p>
-            </div>
-            <p class="font-primary font-semibold text-white text-xl mx-4 text-center mb-4">Don't worry about the
-                security! Most of the stuff is done server-side and no one can access it except us.</p>
-        </div>
+        <p class="font-primary font-semibold text-white text-xl mx-4 text-center mb-4">Access your secrets from
+            anywhere and anytime securely. We provide the users a hassle free environment to manage their secrets.
+        </p>
     </div>
-
-    <p class="py-4 text-center max-w-sm lg:max-w-2xl mx-auto text-white font-primary font-semibold text-4xl">So what are
-        you waiting for? Register for Secrets and manage your secrets easily!</p>
-
-    <footer class="pt-6 pb-2">
-        <div class="flex flex-col lg:flex-row justify-center items-center">
-            <div class="text-gray-600">
-                <p class="font-primary font-semibold text-lg">&copy; Secrets 2022 by <span
-                        class="font-bold font-primary text-xl">Ayush Sehrawat</span></p>
-            </div>
-            <div class="flex gap-4 text-gray-600 font-primary font-semibold text-lg ml-0 lg:ml-96 items-center">
-                <p class="hover:text-white cursor-pointer">About</p>
-                <p class="hover:text-white cursor-pointer">Terms</p>
-                <p class="hover:text-white cursor-pointer">Support</p>
-            </div>
+    <div class="overflow-hidden text-cent bg-green-light rounded-lg max-w-sm">
+        <div class="p-4 flex flex-col items-center gap-2">
+            <i class="fa-solid fa-lock text-white text-4xl"></i>
+            <p class="font-primary font-semibold text-white text-2xl">Security</p>
         </div>
-    </footer>
-
-    <div id="loginModal" class="hidden font-primary top-0 left-0 fixed z-20 items-center justify-center w-screen h-screen bg-slate-300/20 backdrop-blur-sm">
-        <div class="flex max-h-[90vh] max-w-sm flex-col gap-4 overflow-hidden rounded bg-white p-6 text-gray-light shadow-xl shadow-slate-700/10">
-            <div class="grid grid-flow-col justify-between items-center place-content-center gap-4">
-                <p class="font-bold text-xl">Welcome Back</p>
-                <i id="closeLoginModal" class="fas fa-times cursor-pointer relative ml-auto text-green-dark text-xl"></i>
-            </div>
-            <form action="/call/login" method="post">
-                <input type="email" name="email" id="loginemail" class="w-full p-1 border border-gray-600 rounded-lg" placeholder="abc@gmail.com" required>
-                <label for="email" class="mx-2 font-primary font-semibold ">Email</label>
-
-                <input type="password" name="password" id="loginpassword" class="w-full p-1 border border-gray-600 rounded-lg mt-2" placeholder="********" required>
-                <label for="password" class="mx-2 font-primary font-semibold">Password</label>
-
-                <button type="submit" class="w-full p-1 bg-green-light rounded-lg text-white font-bold">Login</button>
-            </form>
-        </div>
+        <p class="font-primary font-semibold text-white text-xl mx-4 text-center mb-4">Don't worry about the
+            security! Most of the stuff is done server-side and no one can access it except us.</p>
     </div>
+</div>
 
-    <div id="registerModal" class="hidden font-primary top-0 left-0 fixed z-20 items-center justify-center w-screen h-screen bg-slate-300/20 backdrop-blur-sm">
-        <div class="flex max-h-[90vh] max-w-sm flex-col gap-4 overflow-hidden rounded bg-white p-6 text-gray-light shadow-xl shadow-slate-700/10">
-            <div class="grid grid-flow-col justify-between items-center place-content-center gap-4">
-                <p class="font-bold text-xl">Register</p>
-                <i id="closeRegisterModal" class="fas fa-times cursor-pointer relative ml-auto text-green-dark text-xl"></i>
-            </div>
-            <form action="/call/register" method="post">
-                <input type="email" name="email" id="registeremail" class="w-full p-1 border border-gray-600 rounded-lg" placeholder="abc@gmail.com" required>
-                <label for="email" class="mx-2 font-primary font-semibold">Email</label>
+<p class="py-4 text-center max-w-sm lg:max-w-2xl mx-auto text-white font-primary font-semibold text-4xl">So what are
+    you waiting for? Register for Secrets and manage your secrets easily!</p>
 
-                <input type="password" name="password" id="registerpassword" class="w-full p-1 border border-gray-600 rounded-lg mt-2" placeholder="********" required>
-                <label for="password" class="mx-2 font-primary font-semibold">Password</label>
-
-                <input type="password" name="password" id="registerconfirmpassword" class="w-full p-1 border border-gray-600 rounded-lg mt-2" placeholder="********" required>
-                <label for="confirmpassword" class="mx-2 font-primary font-semibold">Confirm Password</label>
-
-                <button type="submit" class="w-full p-1 bg-green-light rounded-lg text-white font-bold">Login</button>
-            </form>
+<div id="loginModal"
+    class="hidden font-primary top-0 left-0 fixed z-20 items-center justify-center w-screen h-screen bg-slate-300/20 backdrop-blur-sm">
+    <div
+        class="flex max-h-[90vh] max-w-sm flex-col gap-4 overflow-hidden rounded bg-white p-6 text-gray-light shadow-xl shadow-slate-700/10">
+        <div class="grid grid-flow-col justify-between items-center place-content-center gap-4">
+            <p class="font-bold text-xl">Welcome Back</p>
+            <i id="closeLoginModal" class="fas fa-times cursor-pointer relative ml-auto text-green-dark text-xl"></i>
         </div>
+        <form action="/call/login" method="post">
+            <input type="email" name="email" id="loginemail" class="w-full p-1 border border-gray-600 rounded-lg"
+                placeholder="abc@gmail.com" required>
+            <label for="email" class="mx-2 font-primary font-semibold ">Email</label>
+
+            <input type="password" name="password" id="loginpassword"
+                class="w-full p-1 border border-gray-600 rounded-lg mt-2" placeholder="********" required>
+            <label for="password" class="mx-2 font-primary font-semibold">Password</label>
+
+            <button type="submit" class="w-full p-1 bg-green-light rounded-lg text-white font-bold">Login</button>
+        </form>
     </div>
+</div>
 
-    <script src="/static/script.js"></script>
+<div id="registerModal"
+    class="hidden font-primary top-0 left-0 fixed z-20 items-center justify-center w-screen h-screen bg-slate-300/20 backdrop-blur-sm">
+    <div
+        class="flex max-h-[90vh] max-w-sm flex-col gap-4 overflow-hidden rounded bg-white p-6 text-gray-light shadow-xl shadow-slate-700/10">
+        <div class="grid grid-flow-col justify-between items-center place-content-center gap-4">
+            <p class="font-bold text-xl">Register</p>
+            <i id="closeRegisterModal" class="fas fa-times cursor-pointer relative ml-auto text-green-dark text-xl"></i>
+        </div>
+        <form action="/call/register" method="post">
+            <input type="email" name="email" id="registeremail" class="w-full p-1 border border-gray-600 rounded-lg"
+                placeholder="abc@gmail.com" required>
+            <label for="email" class="mx-2 font-primary font-semibold">Email</label>
 
-</body>
+            <input type="password" name="password" id="registerpassword"
+                class="w-full p-1 border border-gray-600 rounded-lg mt-2" placeholder="********" required>
+            <label for="password" class="mx-2 font-primary font-semibold">Password</label>
 
-</html>
+            <input type="password" name="password" id="registerconfirmpassword"
+                class="w-full p-1 border border-gray-600 rounded-lg mt-2" placeholder="********" required>
+            <label for="confirmpassword" class="mx-2 font-primary font-semibold">Confirm Password</label>
+
+            <button type="submit" class="w-full p-1 bg-green-light rounded-lg text-white font-bold">Login</button>
+        </form>
+    </div>
+</div>
+{% endblock content %}

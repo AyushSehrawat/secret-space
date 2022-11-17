@@ -31,7 +31,7 @@ if __name__ == "__main__":
     import uvicorn
     uvicorn.run(
         "main:app",
-        host="0.0.0.0",
+        host="127.0.0.1",
         port=8000,
         reload_includes=["*.html", "*.css", "*.js"],
         reload_excludes=["./node_modules"],
