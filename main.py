@@ -4,6 +4,7 @@ from fastapi.middleware.cors import CORSMiddleware
 from fastapi.staticfiles import StaticFiles
 from fastapi.templating import Jinja2Templates
 
+from routers import api as api_router
 
 app = FastAPI()
 app.mount("/static", StaticFiles(directory="./templates/static"), name="static")
@@ -13,19 +14,21 @@ origins = ["https://localhost:5500", "https://localhost:8000"]
 
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=origins,
-    allow_credentials=True,
+    allow_origins=["*"],
     allow_methods=["*"],
     allow_headers=["*"],
+    allow_credentials=True,
 )
 
 @app.get("/")
 def index(request : Request):
     return templates.TemplateResponse("index.html", {"request": request})
 
-@app.get("/dashboard/{id}")
-def dashboard(request : Request, id : int):
-    return templates.TemplateResponse("dashboard.html", {"request": request, "id": id})
+@app.get("/dashboard/{user_id}")
+def dashboard(request : Request, user_id : int):
+    return templates.TemplateResponse("dashboard.html", {"request": request, "user_id": user_id})
+
+app.include_router(api_router.router)
 
 if __name__ == "__main__":
     import uvicorn
