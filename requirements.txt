@@ -1,4 +1,5 @@
 fastapi
 jinja2
 uvicorn[standard]
-watchgod
+load_dotenv
+arel

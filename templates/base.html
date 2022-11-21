@@ -48,4 +48,8 @@
     </footer>
     
     <script src="/static/script.js"></script>
+
+    {% if DEBUG %}
+        {{ hotreload.script(url_for('hot-reload')) | safe }}
+    {% endif %}
 </body>
