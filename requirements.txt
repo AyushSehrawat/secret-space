@@ -1,5 +1,2 @@
 fastapi
-jinja2
 uvicorn[standard]
-load_dotenv
-arel

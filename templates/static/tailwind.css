@@ -20,6 +20,6 @@
 body {
     background-color: #222629;
     background-image: radial-gradient(circle, #ffffff20 1%, transparent 10%), radial-gradient(circle, #ffffff20 1%, transparent 10%);
-    background-size: 30px 30px;
-    background-position: 0 0, 80px 80px;
+    background-size: 35px 35px;
+    background-position: 0 0, 55px 55px;
 }
